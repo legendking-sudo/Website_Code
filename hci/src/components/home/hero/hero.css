@@ -1,65 +1,173 @@
 .hero {
-  background-image: url("../../../../public/images/banner.png");
+  background-image: url("/public/images/banner.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   height: 90vh;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
 }
+
 .hero .container {
-  padding-top: 15%;
+  padding-top: 10%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
 }
+
 .hero h1 {
   color: #fff;
-  font-size: 60px;
+  font-size: 48px;
+  line-height: 1.2;
+  margin-bottom: 8px;
+  font-weight: bold;
 }
+
 .hero p {
   color: #fff;
-  opacity: 0.8;
+  opacity: 0.9;
+  font-size: 18px;
+  margin-bottom: 20px;
 }
-form {
+
+/* Form Styling */
+.hero form {
   background-color: #fff;
-  border-radius: 5px;
-  margin-top: 50px;
-  padding: 0 20px;
+  border-radius: 6px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  max-width: 1000px;
+  margin: 20px auto;
+  justify-content: space-between;
 }
-form input {
-  padding: 10px;
+
+.hero form .box {
+  flex: 1;
+  min-width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero form input {
+  padding: 12px 15px;
   width: 100%;
-  border: 1px solid rgba(128, 128, 128, 0.2);
+  border: 1px solid #ddd;
   margin-top: 5px;
-  border-radius: 5px;
+  border-radius: 10px;
+  font-size: 16px;
+  background-color: #f9f9f9;
 }
-form span {
+
+.hero form span {
   font-size: 14px;
   color: grey;
+  margin-left: 5px;
 }
+
 input::placeholder {
-  font-size: 17px;
-  color: black;
+  font-size: 14px;
+  color: #999;
 }
-form .box {
-  padding: 15px;
-  border-left: 1px solid rgba(128, 128, 128, 0.2);
+
+.hero form .btn1 {
+  background-color: #27ae60;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
 }
-form .box:nth-child(1) {
-  border-left: none;
+
+.hero form .btn1:hover {
+  background-color: #219150;
 }
-form h4 {
+
+.advanced-filter {
+  position: relative;
+}
+
+.advanced-filter h4 {
   font-weight: 500;
+  cursor: pointer;
+  color: green;
+  width: 200px;
 }
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 15px;
+  width: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  border-radius: 10px;
+  margin-top: 5px;
+}
+
+.advanced-filter:hover .dropdown {
+  display: block;
+}
+
+.dropdown .filter-option {
+  display: block;
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 4px;
+}
+
+.dropdown .filter-option:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown .filter-option.selected {
+  background-color: #27ae60;
+  color: #fff;
+}
+
 @media screen and (max-width: 800px) {
   .hero .container {
-    padding-top: 30%;
+    padding-top: 20%;
   }
-  form {
-    display: flex;
-    flex-wrap: wrap;
+
+  .hero form {
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+    margin-top: 20px;
   }
-  form .box {
-    border-left: none;
+
+  .hero form .box {
+    width: 100%;
+    padding: 0;
+    border-left: none; /* Consider removing this if not needed */
   }
-  form input {
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .btn1 {
     width: 100%;
   }
 }
